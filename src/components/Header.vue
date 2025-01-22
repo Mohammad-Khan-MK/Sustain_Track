@@ -7,7 +7,7 @@ name: "Header"
 <template>
   <header>
     <nav>
-      <img src="@/assets/images/logo2-removebg-preview%201%20(1).png" alt="Image">
+     <div class="logo"> <img src="@/assets/images/logo2-removebg-preview%201%20(1).png" alt="Image"></div>
       <ul>
         <li><router-link to="/" class="link">HOME</router-link></li>
         <li><router-link to="/about" class="link">ABOUT US</router-link></li>
@@ -21,17 +21,16 @@ name: "Header"
 </template>
 
 <style scoped>
-*{
-  max-width: 1728px;
+header{
+  max-width:1728px ;
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
   padding: 0;
 }
 
 nav{
-  padding: 0 20px 0 20px;
-
-  height: 100px;
+  padding: 0 100px 0 50px;
+  height: 110px;
   background: rgb(210,201,175);
   background: linear-gradient(90deg, rgba(210,201,175,1) 7%, rgba(104,144,104,1) 57%);
   display: flex;
@@ -40,18 +39,15 @@ nav{
 }
 
 ul{
-  width: 80%;
   display: flex;
-  gap: 10px;
   list-style: none;
-  justify-content: space-around;
-
+  justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 ul>li{
   border-radius: 5px;
-
   background-color: #D2C9AF;
   padding: 10px 18px;
   font-family: 'Roboto', sans-serif;
@@ -61,15 +57,21 @@ ul>li{
 
 .link{
   text-decoration: none;
-
   color: #201f1f;
 }
-img{
-  width: 80px;
-  height: 80px;
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
-header{
-  width: 98%;
+
+img {
+  width: 90px;
+  height: 90px;
+  display: block;
 }
+
 
 </style>
