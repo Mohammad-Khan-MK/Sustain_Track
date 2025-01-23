@@ -12,7 +12,9 @@ export default {
 </script>
 
 <template>
-  <button type="submit" class="form-btn">{{ label }}</button>
+  <button :type="type" class="form-btn" @click="$emit('click')">
+    {{ label }}
+  </button>
 </template>
 
 <style scoped>

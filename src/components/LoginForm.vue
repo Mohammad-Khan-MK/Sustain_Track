@@ -1,3 +1,5 @@
+
+
 <script>
 import Input_Field from "@/components/Input_Field.vue";
 import Button_Form from "@/components/Button_Form.vue";
@@ -6,19 +8,25 @@ export default {
   name: "LoginForm",
   components: {
     Input_Field,
-    Button_Form,
+    Button_Form
   },
   props: {
     formTitle: {
       type: String,
-      required: true,
+      required: true
     },
     backgroundColor: {
       type: String,
-      default: "#fff",
-    },
+      default: "#fff"
+    }
   },
-};
+  methods: {
+    goToAccountPage() {
+      console.log("Navigating to Account page...");
+      this.$router.push({ name: 'Account' });
+    }
+  }
+  };
 </script>
 
 <template>
@@ -32,9 +40,15 @@ export default {
         <label id="remember" for="remember-me">Remember me</label>
       </div>
       <Button_Form label="Log In"/>
-      <p class="create-account-text">Don’t Have an Account</p>
-      <Button_Form id="acc-btn" label="Create Account"/>
     </form>
+    <p class="create-account-text">Don’t Have an Account</p>
+    <Button_Form
+        id="acc-btn"
+        label="Create Account"
+        :type="'button'"
+        @click="goToAccountPage"
+    />
+
   </div>
 </template>
 
@@ -71,27 +85,24 @@ export default {
   align-items: center;
   margin-bottom: 20px;
   align-self: flex-start;
-  padding-left: 32px
+  padding-left: 32px;
 }
 
 .checkbox-container input {
   margin-right: 10px;
 }
 
-.create-account-text{
+.create-account-text {
   margin: 10px 0;
-
 }
 
-.create-account-text,#remember {
+.create-account-text,
+#remember {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   text-align: left;
-
   width: 373px;
   letter-spacing: 1px;
-  font-weight:lighter;
+  font-weight: lighter;
 }
-
-
 </style>

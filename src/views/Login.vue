@@ -13,9 +13,9 @@ export default {
 };
 </script>
 
+
 <template>
   <div>
-
     <div class="login-page-wrapper">
       <div class="login-page">
         <LoginForm formTitle="Admin Login" backgroundColor="#fff" :inputWidth="350"/>
@@ -23,7 +23,6 @@ export default {
         <LoginForm formTitle="User Log In" backgroundColor="#8FAD88" :inputWidth="350"/>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -46,8 +45,8 @@ export default {
 }
 
 .divider {
-  width: 5px;
-  background-color: #A78B6A;
-  height: 80%;
+  width: 7px;
+  background-color: #8E705D;
+  height: 70%;
 }
 </style>

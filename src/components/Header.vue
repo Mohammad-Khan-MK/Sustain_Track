@@ -26,6 +26,7 @@ header{
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
   padding: 0;
+
 }
 
 nav{
@@ -36,6 +37,7 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 10px 10px 0 0;
 }
 
 ul{

@@ -1,61 +1,63 @@
 <script>
 import Main_Button from "@/components/Main_Button.vue";
+import {useRouter} from "vue-router";
 
 export default {
   name: "Home",
-  components: {Main_Button}
-}
+  components: {Main_Button},
+  setup() {
+    const router = useRouter();
+    const navigateToLogin = () => {
+      router.push("/login");
+    };
+    return {navigateToLogin};
+  },
+};
 </script>
 
-<template style="background-color: #ebeadf" >
-
+<template style="background-color: #ebeadf">
   <div class="hero-container">
     <div class="hero-content">
       <h1 class="hero-title"><span>Small Actions,</span> Big Impact...</h1>
       <p class="hero-subtitle">
-        Start tracking your journey to a sustainable future today!</p>
-      <Main_Button class="hero-button"/>
-
+        Start tracking your journey to a sustainable future today!
+      </p>
+      <Main_Button class="hero-button" @click="navigateToLogin"/>
     </div>
-
-
   </div>
   <div class="main-content">
     <div class="card_1">
-
-      <img src="@/assets/images/image_1.png" alt="Descriptive Alt Text" style="">
+      <img src="@/assets/images/image_1.png" alt="Descriptive Alt Text" style=""/>
       <div class="text">
         <h2>“Cherish Nature, One Step at a Time.”</h2>
-        <p>Take a moment to reflect on the beauty
-          of our planet. Sustain Track empowers
-          you to monitor your environmental imp-
-          act impact and make mindful choice for
-          a sustainable tomorrow.</p>
+        <p>
+          Take a moment to reflect on the beauty of our planet. Sustain Track
+          empowers you to monitor your environmental imp- act impact and make
+          mindful choice for a sustainable tomorrow.
+        </p>
       </div>
     </div>
     <div class="card_2">
       <div class="text">
         <h2>“Be the Change the Planet needs.”</h2>
-        <p>Every small step you take makes a difference. Start tracking your daily habits and join the movement toward a cleaner, healthier environment.</p>
-
+        <p>
+          Every small step you take makes a difference. Start tracking your
+          daily habits and join the movement toward a cleaner, healthier
+          environment.
+        </p>
       </div>
-      <img src="@/assets/images/image_2.png" alt="Descriptive Alt Text">
-
+      <img src="@/assets/images/image_2.png" alt="Descriptive Alt Text"/>
     </div>
-   <div id="join"> <Main_Button /></div>
+    <div id="join">
+      <Main_Button @click="navigateToLogin"/>
+    </div>
   </div>
-
-
-
-
-
 </template>
 
-
 <style scoped>
-*{
-  max-width:1728px ;
-  font-family: 'Roboto', sans-serif;
+* {
+  max-width: 1728px;
+  font-family: "Roboto", sans-serif;
   margin: 0 auto;
   padding: 0;
 }
@@ -88,40 +90,38 @@ export default {
   font-weight: bold;
   color: #444;
 }
-img{
+
+img {
   width: 40%;
 }
 
-.card_1, .card_2{
+.card_1,
+.card_2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
 }
-.card_1{
+
+.card_1 {
   padding-bottom: 100px;
 }
-#join{
 
+#join {
   text-align: center;
-padding: 120px 0 100px 0;}
+  padding: 120px 0 100px 0;
+}
 
 .hero-container {
   position: relative;
-  height: 55vh;
+  height: 60vh;
 
-
-  background-image: url('@/assets/images/backgroung_img_2.jpg');
+  background-image: url("@/assets/images/backgroung_img_2.jpg");
 
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
-
-
 }
-
 
 .hero-content {
   text-align: center;
@@ -132,19 +132,17 @@ padding: 120px 0 100px 0;}
 }
 
 .hero-title {
-
   font-size: 80px;
   margin: 0;
   padding-top: 15px;
   font-style: italic;
   letter-spacing: 5px;
-
 }
+
 .hero-title span {
-  color: #D3C9AD;
+  color: #d3c9ad;
 
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-
 }
 
 .hero-subtitle {
@@ -162,17 +160,16 @@ padding: 120px 0 100px 0;}
 }
 
 .hero-button {
-
   position: absolute;
   top: 80%;
   left: 50%;
   transform: translateX(-50%);
 }
-.main-content{
+
+.main-content {
   background-color: #ebeadf;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
 }
 </style>
-
