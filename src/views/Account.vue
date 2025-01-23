@@ -75,7 +75,7 @@ h1{text-align: center;
 
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 70vh;
   background: #D2C9AF;
 
 }
@@ -99,7 +99,7 @@ img {
   height: 650px;
   background: #fff;
   border-radius: 0 10px 10px 0;
-  width: 60%;
+  width: 50%;
   margin-left: -2px;
 
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
