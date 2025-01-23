@@ -77,7 +77,7 @@ export default {
 
 .text p {
   font-size: 18px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-align: justify;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -99,16 +99,14 @@ img{
 
 
 }
+.card_1{
+  padding-bottom: 100px;
+}
 #join{
 
   text-align: center;
-padding: 80px 0 80px 0;}
-*{
-  font-family: 'Roboto', sans-serif;
-  max-width: 1728px;
-  margin: 0 auto;
-  padding: 0;
-}
+padding: 120px 0 100px 0;}
+
 .hero-container {
   position: relative;
   height: 55vh;
@@ -164,6 +162,7 @@ padding: 80px 0 80px 0;}
 }
 
 .hero-button {
+
   position: absolute;
   top: 80%;
   left: 50%;
@@ -174,9 +173,6 @@ padding: 80px 0 80px 0;}
   padding-top: 100px;
   display: flex;
   flex-direction: column;
-  row-gap: 100px;
-
-
 }
 </style>
 
