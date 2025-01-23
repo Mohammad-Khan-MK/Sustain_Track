@@ -99,7 +99,7 @@ img {
   height: 650px;
   background: #fff;
   border-radius: 0 10px 10px 0;
-  width: 50%;
+  width: 60%;
   margin-left: -2px;
 
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
