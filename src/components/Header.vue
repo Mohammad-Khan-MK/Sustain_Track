@@ -15,6 +15,7 @@ name: "Header"
         <li><router-link to="/resources" class="link">RESOURCES</router-link></li>
         <li><router-link to="/contact" class="link">CONTACT US</router-link></li>
         <li><router-link to="/login" class="link">LOG IN</router-link></li>
+        <li><router-link to="/listCategory" class="link">List Cat</router-link></li>
       </ul>
     </nav>
   </header>
