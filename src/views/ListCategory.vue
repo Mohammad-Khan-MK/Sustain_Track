@@ -1,4 +1,9 @@
-<script setup>
+<script>
+
+export default {
+  name: "listCategory"
+}
+
 
 </script>
 
