@@ -7,6 +7,10 @@ export default {
       type: String,
       required: true,
     },
+    type: {
+      type: String,
+      default: "button", // Default to 'button' to prevent form submission issues
+    },
   },
 };
 </script>
@@ -23,9 +27,9 @@ export default {
   font-weight: bold;
   letter-spacing: 1px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-  width: 373px; /* Updated width to match the input field */
+  width: 300px; /* Updated width to match the input field */
   background-color: #D3C9AD;
-  padding: 10px; /* Ensures consistent padding with the input field */
+  padding: 5px; /* Ensures consistent padding with the input field */
   border-left: 2px solid black;
   border-bottom: 2px solid black;
   border-right: 1px solid black;

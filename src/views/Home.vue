@@ -1,28 +1,31 @@
 <script>
 import Main_Button from "@/components/Main_Button.vue";
 import {useRouter} from "vue-router";
-
 export default {
   name: "Home",
   components: {Main_Button},
+
   setup() {
     const router = useRouter();
-    const navigateToLogin = () => {
-      router.push("/login");
+    const navigateToRegistration = () => {
+      router.push("/registration");
     };
-    return {navigateToLogin};
+    return {navigateToRegistration};
   },
 };
 </script>
 
-<template style="background-color: #ebeadf">
+<template >
+
+
+
   <div class="hero-container">
     <div class="hero-content">
       <h1 class="hero-title"><span>Small Actions,</span> Big Impact...</h1>
       <p class="hero-subtitle">
         Start tracking your journey to a sustainable future today!
       </p>
-      <Main_Button class="hero-button" @click="navigateToLogin"/>
+      <Main_Button class="hero-button" @click="navigateToRegistration"/>
     </div>
   </div>
   <div class="main-content">
@@ -49,7 +52,7 @@ export default {
       <img src="@/assets/images/image_2.png" alt="Descriptive Alt Text"/>
     </div>
     <div id="join">
-      <Main_Button @click="navigateToLogin"/>
+      <Main_Button @click="navigateToRegistration"/>
     </div>
   </div>
 </template>
@@ -57,119 +60,90 @@ export default {
 <style scoped>
 * {
   max-width: 1728px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0 auto;
   padding: 0;
-}
-
-.text {
-  width: 50%;
-  font-family: "Roboto Mono", monospace;
-  line-height: 1.8;
-  margin: 0 auto;
-}
-
-.text h2 {
-  font-size: 32px;
-  font-style: italic;
-  letter-spacing: 3px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.text p {
-  font-size: 18px;
-  letter-spacing: 2px;
-  text-align: justify;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.text p::first-letter {
-  font-size: 28px;
-  font-weight: bold;
-  color: #444;
+  box-sizing: border-box;
 }
 
 img {
   width: 40%;
 }
 
-.card_1,
-.card_2 {
+.card_1, .card_2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.card_1 {
-  padding-bottom: 100px;
+  gap: 50px;
+  padding: 0 50px 0 50px;
 }
 
 #join {
   text-align: center;
-  padding: 120px 0 100px 0;
+  padding: 80px 0 80px 0;
 }
 
+/* Hero Section */
 .hero-container {
+  width: 100%;
   position: relative;
-  height: 60vh;
-
-  background-image: url("@/assets/images/backgroung_img_2.jpg");
-
+  height: 70vh;
+  background-image: url('@/assets/images/backgroung_img_2.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-
   padding: 20px;
   border-radius: 8px;
+  width: 100%;
 }
 
 .hero-title {
+  margin-bottom: 100px;
   font-size: 80px;
-  margin: 0;
-  padding-top: 15px;
+
   font-style: italic;
   letter-spacing: 5px;
 }
 
 .hero-title span {
-  color: #d3c9ad;
-
+  color: #D3C9AD;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .hero-subtitle {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 200px;
   font-size: 40px;
   letter-spacing: 2px;
   font-style: italic;
   font-weight: bolder;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  width: 100%;
-  text-align: center;
 }
 
 .hero-button {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translateX(-50%);
+
+ margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .main-content {
   background-color: #ebeadf;
-  padding-top: 100px;
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
+  row-gap: 50px;
+  column-gap: 50px;
 }
+
 </style>
+

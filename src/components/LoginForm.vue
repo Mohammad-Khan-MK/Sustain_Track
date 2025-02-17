@@ -1,5 +1,3 @@
-
-
 <script>
 import Input_Field from "@/components/Input_Field.vue";
 import Button_Form from "@/components/Button_Form.vue";
@@ -8,7 +6,7 @@ export default {
   name: "LoginForm",
   components: {
     Input_Field,
-    Button_Form
+    Button_Form,
   },
   props: {
     formTitle: {
@@ -20,89 +18,105 @@ export default {
       default: "#fff"
     }
   },
+  data() {
+    return {
+      username: '',
+      email: '',
+      password: '',
+      rememberMe: false
+    };
+  },
   methods: {
-    goToAccountPage() {
-      console.log("Navigating to Account page...");
-      this.$router.push({ name: 'Account' });
+    submitForm() {
+      console.log("Logging in with:", this.username, this.email, this.password);
+      // Add your API call or form validation here
+
+      // Navigate to the Profile page after successful login
+      this.$router.push({ name: 'Profile' });
+    },
+    navigateToRegistration() {
+      this.$router.push({ name: 'Registration' });
     }
   }
-  };
+};
 </script>
 
 <template>
   <div class="form-container" :style="{ backgroundColor: backgroundColor }">
-    <h2 class="form-title">{{ formTitle }}</h2>
-    <form class="form-content">
-      <Input_Field label="Email Address" id="email" type="email" placeholder="Enter your email..."/>
-      <Input_Field label="Password" id="password" type="password" placeholder="Enter your password..."/>
+    <h1 class="form-title">{{ formTitle }}</h1>
+    <form class="form-content" @submit.prevent="submitForm">
+      <!-- Input Fields with v-model -->
+      <Input_Field label="User Name" id="username" type="text" placeholder="Enter your username..." v-model="username"/>
+      <Input_Field label="Email Address" id="email" type="email" placeholder="Enter your email..." v-model="email"/>
+      <Input_Field label="Password" id="password" type="password" placeholder="Enter your password..." v-model="password"/>
+
       <div class="checkbox-container">
-        <input type="checkbox" id="remember-me"/>
-        <label id="remember" for="remember-me">Remember me</label>
+        <label id="remember">
+          <input type="checkbox" id="remember-me" v-model="rememberMe" />
+          Remember me
+        </label>
       </div>
-      <Button_Form label="Log In"/>
+      <Button_Form label="Log In" :type="'submit'" />
     </form>
-    <p class="create-account-text">Don’t Have an Account</p>
+
+    <!-- Link to Registration Page -->
+    <p class="account-text">Don’t Have an Account</p>
     <Button_Form
         id="acc-btn"
         label="Create Account"
         :type="'button'"
-        @click="goToAccountPage"
+        @click="navigateToRegistration"
     />
-
   </div>
 </template>
 
+
 <style scoped>
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .form-container {
-  width: 450px;
-  padding: 60px 0 60px 0;
+  padding: 60px 60px;
   border-radius: 10px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 
 .form-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+
+  letter-spacing: 2px;
   text-align: center;
   margin-bottom: 20px;
-  letter-spacing: 2px;
 }
 
 .form-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  gap: 10px;
 }
 
 .checkbox-container {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  align-self: flex-start;
-  padding-left: 32px;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.checkbox-container input {
-  margin-right: 10px;
-}
-
-.create-account-text {
+.account-text {
   margin: 10px 0;
-}
-
-.create-account-text,
-#remember {
-  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  text-align: left;
-  width: 373px;
   letter-spacing: 1px;
   font-weight: lighter;
+  text-align: left;
+  width: 100%;
 }
 </style>
+

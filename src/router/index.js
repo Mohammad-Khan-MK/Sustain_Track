@@ -1,12 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
-import Account from '../views/Account.vue';
+import Profile from '../views/Profile.vue';
+
+import Registration from "@/views/Registration.vue";
 
 const routes = [
     { path: '/', name: 'Home', component: Home },
     { path: '/login', name: 'Login', component: Login },
-    { path: '/account', name: 'Account', component: Account }, // Ensure this route is correct
+    { path: '/registration', name: 'Registration', component: Registration},
+    {path:'/profile',name:'Profile',component: Profile}// Ensure this route is correct
 ];
 
 const router = createRouter({
@@ -15,3 +18,5 @@ const router = createRouter({
 });
 
 export default router;
+
+

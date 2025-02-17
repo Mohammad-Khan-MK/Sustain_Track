@@ -1,4 +1,3 @@
-
 <script>
 export default {
   name: "Input_Field",
@@ -13,11 +12,20 @@ export default {
     },
     type: {
       type: String,
-      default: "text", // Default type is text
+      default: "text",
     },
     placeholder: {
       type: String,
       default: "Enter your value...",
+    },
+    modelValue: {
+      type: String,
+      default: '',
+    },
+  },
+  methods: {
+    updateValue(event) {
+      this.$emit('update:modelValue', event.target.value);
     },
   },
 };
@@ -30,6 +38,8 @@ export default {
         :type="type"
         :id="id"
         :placeholder="placeholder"
+        :value="modelValue"
+        @input="updateValue"
         required
         class="input-field"
     />
@@ -40,28 +50,55 @@ export default {
 .input-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
 label {
-  margin-bottom: 5px;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1px;
-  font-weight:lighter;
-  width: 373px;
   text-align: left;
 }
 
 .input-field {
+  width: 300px;
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 1px;
   font-style: italic;
-  width: 350px;
   background-color: whitesmoke;
-  padding: 10px;
+  padding: 5px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  cursor: pointer;
+}
+</style>
+
+
+<style scoped>
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.input-field {
+  width: 300px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-style: italic;
+  background-color: whitesmoke;
+  padding: 5px;
   border-left: 2px solid black;
   border-bottom: 2px solid black;
   border-right: 1px solid black;

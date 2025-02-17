@@ -22,52 +22,47 @@ name: "Header"
 </template>
 
 <style scoped>
-header{
-  max-width:1728px ;
+* {
+  max-width: 1728px;
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
   padding: 0;
-
+  box-sizing: border-box;
 }
 
-nav{
-  padding: 0 100px 0 50px;
+nav {
   height: 110px;
-  background: rgb(210,201,175);
-  background: linear-gradient(90deg, rgba(210,201,175,1) 7%, rgba(104,144,104,1) 57%);
+  background: rgb(210, 201, 175);
+  background: linear-gradient(90deg, rgba(210, 201, 175, 1) 7%, rgba(104, 144, 104, 1) 57%);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px 10px 0 0;
+
 }
 
-ul{
+ul {
   display: flex;
   list-style: none;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  margin-right: 70px;
 }
 
-ul>li{
+ul > li {
   border-radius: 5px;
-  background-color: #D2C9AF;
-  padding: 10px 18px;
+  font-size: 14px;
+  background-color: #d2c9af;
+  padding: 10px 14px;
   font-family: 'Roboto', sans-serif;
-  font-weight:bold;
-  box-shadow: 5px 5px 5px rgba(0,0,0,.25);
+  font-weight: bold;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .25);
 }
 
-.link{
+.link {
   text-decoration: none;
   color: #201f1f;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }
 
 img {
@@ -76,5 +71,8 @@ img {
   display: block;
 }
 
+.logo {
+  margin-left: 50px;
 
+}
 </style>

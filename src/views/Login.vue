@@ -13,16 +13,14 @@ export default {
 };
 </script>
 
-
 <template>
-  <div>
+
     <div class="login-page-wrapper">
       <div class="login-page">
-        <LoginForm formTitle="Admin Login" backgroundColor="#fff" :inputWidth="350"/>
-        <div class="divider"></div>
-        <LoginForm formTitle="User Log In" backgroundColor="#8FAD88" :inputWidth="350"/>
+        <!-- Login Form Component with its props -->
+        <LoginForm formTitle="User Log In" backgroundColor="#8FAD88" />
       </div>
-    </div>
+
   </div>
 </template>
 
@@ -32,7 +30,9 @@ export default {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  padding: 60px 0 60px 0;
+  background-color: #ebeadf;
+
 }
 
 .login-page {
@@ -40,13 +40,7 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: #ebeadf;
   flex-grow: 1;
-}
 
-.divider {
-  width: 7px;
-  background-color: #8E705D;
-  height: 70%;
 }
 </style>

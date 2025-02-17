@@ -73,11 +73,13 @@ export default {
 </template>
 
 <style scoped>
-* {
-  max-width: 1728px;
+*{
+  max-width:1728px ;
   font-family: 'Roboto', sans-serif;
-  margin: 0;
+  margin: 0  ;
   padding: 0;
+  box-sizing: border-box;
+
 }
 
 h1 {
@@ -91,6 +93,7 @@ h1 {
   width: 270px;
   border: 2px solid black;
   margin: 0 auto;
+
 }
 
 .line-2 {
@@ -118,8 +121,8 @@ h1 {
 }
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 .flex-item-1, .flex-item-2, .flex-item-3 {
   width: 220px;
